@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.2">
+    <title xml:lang="ko">XE Contest 2014 blog 레이아웃</title>
+    <title xml:lang="en">XE Contest 2014 blog layout</title>
+    <description xml:lang="ko">http://contest.xpressengine.com/templates/blog/blog.main.html 의 소스를 그대로 사용하였습니다.</description>
+    <description xml:lang="en">http://contest.xpressengine.com/templates/blog/blog.main.html</description>
+    <version>1.0</version>
+    <date>2015-01-31</date>
+    <author email_address="jht008@gmail.com" link="http://www.zfanta.com/">
+        <name xml:lang="ko">zfanta</name>
+        <name xml:lang="en">zfanta</name>
+    </author>
+    <menus>
+        <menu name="GNB" maxdepth="2" default="true">
+            <title xml:lang="ko">전역 네비게이션 바</title>
+            <title xml:lang="en">Global Navigation Bar</title>
+        </menu>
+		<menu name="sideBar" maxdepth="2" default="true">
+			<title xml:lang="ko">사이드바</title>
+			<title xml:lang="en">Side Bar</title>
+		</menu>
+    </menus>
+	<extra_vars />
+</layout>
