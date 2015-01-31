@@ -135,46 +135,16 @@
         <!-- GNB -->
         <nav class="gnb" id="gnb">
             <ul>
-            <li><a href="blog.main.html">prologue</a></li>
-            <li>
-                <!-- [D] 하위 메뉴가 있을 경우 클래스 tri 추가 -->
-                <a href="#" class="tri">color-theme</a>
-                <ul class="depth2">
-                <li><a href="#">black &amp; yellow</a></li>
-                <li><a href="#">white &amp; yellow</a></li>
-                </ul>
+            <li loop="$GNB->list=>$key1,$val1">
+                <a href="{$val1['href']}" class="tri"|cond="$val1['list']">{$val1['link']}</a>
+                <block cond="$val1['list']">
+                    <ul class="depth2">
+                        <li loop="$val1['list']=>$key2,$val2">
+                            <a href="{$val2['href']}">{$val2['link']}</a>
+                        </li>
+                    </ul>
+                </block>
             </li>
-            <li>
-                <a href="#" class="tri">sub type</a>
-                <ul class="depth2">
-                <li><a href="blog.sub.html">left sidebar</a></li>
-                <li><a href="blog.sub_right.html">right sidebar</a></li>
-                <li><a href="blog.sub_full.html">full width</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#" class="tri">gallery</a>
-                <ul class="depth2">
-                <li><a href="blog.board_gallery.html">standard 2 column</a></li>
-                <li><a href="blog.board_gallery2.html">masonry 4 column</a></li>
-                <li><a href="blog.board_gallery3.html">classic 3 column</a></li>
-                <li><a href="blog.board_gallery4.html">round 4 column</a></li>
-                <li><a href="blog.board_gallery_single.html">gallery single</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#" class="tri">blog</a>
-                <ul class="depth2">
-                <li><a href="blog.board_blog.html">blog style 1</a></li>
-                <li><a href="blog.board_blog2.html">blog style 2</a></li>
-                <li><a href="blog.board_blog3.html">blog style 3</a></li>
-                <li><a href="blog.board_blog4.html">blog style 4</a></li>
-                <li><a href="blog.board_list_basic.html">list style basic</a></li>
-                <li><a href="blog.board_guestbook.html">guestbook</a></li>
-                <li><a href="blog.board_write.html">write form</a></li>
-                </ul>
-            </li>
-            <li><a href="blog.sub_license.html">license</a></li>    
             </ul>
         </nav>
 	    <!-- /GNB -->
