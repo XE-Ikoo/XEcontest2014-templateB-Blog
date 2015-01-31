@@ -39,30 +39,23 @@
 <!-- TITLE -->
 <title>Blog Theme : XE Contest</title>
 <!-- CSS -->
-<link rel="stylesheet" href="../xe_common/xe.min.css">
-<link rel="stylesheet" href="./css/layout.blog.css">
-<link rel="stylesheet" href="./css/jquery.bxslider.css">
-<link rel="stylesheet" href="./css/widget.blog.css">
-<link rel="stylesheet" href="./css/widget.counter.css">
-<link rel="stylesheet" href="./css/widget.tag.css">
-<link rel="stylesheet" href="./css/widgetstyle.blog.css">
-<link rel="stylesheet" href="https://s3.amazonaws.com/icomoon.io/49314/XEIconv10/style.css">
-<!--[if lt IE 8]><link rel="stylesheet" href="../xe_icon/ie7/ie7.css"><![endif]-->
+<load target="../../common/css/xe.min.css" />
+<load target="./css/layout.blog.css" />
+<load target="./css/jquery.bxslider.css" />
+<load target="./css/widget.blog.css" />
+<load target="./css/widget.counter.css" />
+<load target="./css/widget.tag.css" />
+<load target="./css/widgetstyle.blog.css" />
+<load target="./css/XEIconv10/style.css" />
+<!--[if lt IE 8]><load target="./xe_icon/ie7/ie7.css" /><![endif]-->
 <!-- JS -->
-<!--[if lt IE 9]><script src="../xe_common/jquery-1.x.min.js"></script><![endif]-->
-<!--[if gte IE 9]><!--><script src="../xe_common/jquery.min.js"></script><![endif]-->
-<!--[if lt IE 9]><script src="../xe_common/html5.js"></script><![endif]-->
-<script src="../xe_common/xe.min.js"></script>
-<script src="./js/jquery.bxslider.js"></script>
-<script src="./js/layout.blog.js"></script>
-<script src="./js/colorset_test.js"></script>
-    
-<!-- 게시판 CSS, JS -->
-<link rel="stylesheet" href="../board/css/board.default.css">
-<!--[if lt IE 9]><link rel="stylesheet" href="../board/css/board.default_ie8.css"><![endif]-->
-<script src="../board/js/masonry.pkgd.min.js"></script>
-<script src="../board/js/board.default.js"></script>
-<!-- /게시판 css -->
+<!--[if lt IE 9]><load target="../../common/js/jquery-1.x.min.js" /><![endif]-->
+<!--[if gte IE 9]><!--><load target="../../common/js/jquery.min.js" /><![endif]-->
+<!--[if lt IE 9]><load target="../../common/js/html5.js"><![endif]-->
+<load target="../../common/js/xe.min.js" />
+<load target="./js/jquery.bxslider.js" />
+<load target="./js/layout.blog.js" />
+<load target="./js/colorset_test.js" />
 </head>
 
 <!-- [D] [Color Set] 
@@ -74,7 +67,7 @@
     <!-- [D] 배경 이미지 고정형 : 이미지 사이즈 1440x800
                           배경 이지미 패턴형 : 클래스 pattern 추가 
                           배경 이미지 미사용 : 클래스 top_bg_none 추가 -->
-    <div class="top_bg top_bg_none" style="background-image:url(./img/head_bg_img.png)"></div>
+    <div class="top_bg top_bg_none" style="background-image:url(./layouts/XEcontest2014Blog/img/head_bg_img.png)"></div>
 	<p class="skip"><a href="#content">메뉴 건너뛰기</a></p>
     <header class="header">
         <div class="top_section">
@@ -298,255 +291,7 @@
             <!-- /SUB TITLE -->    
     		<!-- CONTENT -->
     		<div class="content" id="content">
-                <!-- BOARD - Blog Style 1 -->
-                <div class="board">
-                    <div class="board_list">
-                        <!-- [D] 블로그 리스트 형태 적용 클래스
-                                1. Blog Style 1 : class="blog_type",
-                                2. Blog Style 2 : class="blog_type2",
-                                3. Blog Style 3 : class="blog_type3",
-                                4. Blog Style 4 : class="blog_type4"
-                        -->
-                        <!-- 블로그 스타일 리스트 -->
-                        <ol id="bd_lst" class="bd_lst blog_type">
-                        <li>
-                            <!-- [D] class="bd_img 에 썸네일 크기 사이즈 width 적용 -->
-                            <div class="bd_img" style="width:320px">
-                                <a href="#">
-                                    <!-- [D] 썸네일 크기 사이즈 적용 -->
-                                    <img src="../board/img/b1-01.jpg" alt="" style="width:320px;height:200px">
-                                    <div class="img_dimmed"></div>
-                                </a>
-                            </div>
-                            <div class="bd_lst_con">
-                                <div class="bd_lst_info">
-                                    <a href="#" class="bd_tit">블로그타입#1 (2줄 노출, 글자수 제한 필요)</a>
-                                    <p class="bd_content">블로그형 게시판의 일반형입니다. 게시판에 포스팅된 이미지가 좌측 썸네일로 노출됩니다. 이미지 썸네일, 게시글 제목, 글 내용, 작성자, 작성날짜, 카테고리, 댓글 수가 기본으로 노출됩니다. 설정하여 노... (3줄 노출, 글자수 제한 필요)</p>
-                                    <div class="bd_info">
-                                        <!-- 비로그인 시 유저명 노출
-                                        <span class="bd_writer">by <em class="bd_writer_name">XE(비로그인)</em></span>
-                                        -->
-                                        <span class="bd_writer">by <a href="#" class="bd_writer_name">XE(로그인)</a></span>
-                                        <span class="bd_date">14.10.27</span>
-                                        <span class="bd_category"><a href="#">Design</a></span>
-                                        <span class="bd_cmt">2 Comments</span>
-                                        <span class="bd_likes">198 Likes</span>
-                                        <!-- [D] 관리자모드 일 경우 노출 -->
-                                        <input type="checkbox" class="chk_mng">
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="bd_img" style="width:320px">
-                                <a href="#">
-                                    <img src="../board/img/b1-02.jpg" alt="" style="width:320px;height:200px">
-                                    <div class="img_dimmed"></div>
-                                </a>
-                            </div>
-                            <div class="bd_lst_con">
-                                <div class="bd_lst_info">
-                                    <a href="#" class="bd_tit">블로그타입#1 예시 텍스트. 긴 제목 삽입의 경우 예시입니다.</a>
-                                    <p class="bd_content">블로그형 게시판의 일반형입니다. 게시판에 포스팅된 이미지가 좌측 썸네일로 노출됩니다. 이미지 썸네일, 게시글 제목, 글 내용, 작성자, 작성날짜, 카테고리, 댓글 수가 기본으로 노출됩니다. 이외의 항목 또한 설정하여 노...</p>
-                                    <div class="bd_info">
-                                        <span class="bd_writer">by <a href="#" class="bd_writer_name">XE(로그인)</a></span>
-                                        <span class="bd_date">14.10.27</span>
-                                        <span class="bd_category"><a href="#">Design</a></span>
-                                        <span class="bd_cmt">2 Comments</span>
-                                        <span class="bd_likes">198 Likes</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="bd_img" style="width:320px">
-                                <a href="#">
-                                    <img src="../board/img/b1-03.jpg" alt="" style="width:320px;height:200px">
-                                    <div class="img_dimmed"></div>
-                                </a>
-                            </div>
-                            <div class="bd_lst_con">
-                                <div class="bd_lst_info">
-                                    <a href="#" class="bd_tit">블로그타입#1 예시 텍스트. 긴 제목 삽입의 경우 예시입니다.</a>
-                                    <p class="bd_content">블로그형 게시판의 일반형입니다. 게시판에 포스팅된 이미지가 좌측 썸네일로 노출됩니다. 이미지 썸네일, 게시글 제목, 글 내용, 작성자, 작성날짜, 카테고리, 댓글 수가 기본으로 노출됩니다. 이외의 항목 또한 설정하여 노...</p>
-                                    <div class="bd_info">
-                                        <span class="bd_writer">by <em class="bd_writer_name">XE(비로그인)</em></span>
-                                        <span class="bd_date">14.10.27</span>
-                                        <span class="bd_category"><a href="#">Design</a></span>
-                                        <span class="bd_cmt">2 Comments</span>
-                                        <span class="bd_likes">198 Likes</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="bd_img" style="width:320px">
-                                <a href="#">
-                                    <img src="../board/img/b1-04.jpg" alt="" style="width:320px;height:200px">
-                                    <div class="img_dimmed"></div>
-                                </a>
-                            </div>
-                            <div class="bd_lst_con">
-                                <div class="bd_lst_info">
-                                    <a href="#" class="bd_tit">블로그타입#1 예시 텍스트. 긴 제목 삽입의 경우 예시입니다.</a>
-                                    <p class="bd_content">블로그형 게시판의 일반형입니다. 게시판에 포스팅된 이미지가 좌측 썸네일로 노출됩니다. 이미지 썸네일, 게시글 제목, 글 내용, 작성자, 작성날짜, 카테고리, 댓글 수가 기본으로 노출됩니다. 이외의 항목 또한 설정하여 노...</p>
-                                    <div class="bd_info">
-                                        <span class="bd_writer">by <em class="bd_writer_name">XE(비로그인)</em></span>
-                                        <span class="bd_date">14.10.27</span>
-                                        <span class="bd_category"><a href="#">Design</a></span>
-                                        <span class="bd_cmt">2 Comments</span>
-                                        <span class="bd_likes">198 Likes</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="bd_img" style="width:320px">
-                                <a href="#">
-                                    <img src="../board/img/b1-05.jpg" alt="" style="width:320px;height:200px">
-                                    <div class="img_dimmed"></div>
-                                </a>
-                            </div>
-                            <div class="bd_lst_con">
-                                <div class="bd_lst_info">
-                                    <a href="#" class="bd_tit">블로그타입#1 예시 텍스트. 긴 제목 삽입의 경우 예시입니다.</a>
-                                    <p class="bd_content">블로그형 게시판의 일반형입니다. 게시판에 포스팅된 이미지가 좌측 썸네일로 노출됩니다. 이미지 썸네일, 게시글 제목, 글 내용, 작성자, 작성날짜, 카테고리, 댓글 수가 기본으로 노출됩니다. 이외의 항목 또한 설정하여 노...</p>
-                                    <div class="bd_info">
-                                        <span class="bd_writer">by <em class="bd_writer_name">XE(비로그인)</em></span>
-                                        <span class="bd_date">14.10.27</span>
-                                        <span class="bd_category"><a href="#">Design</a></span>
-                                        <span class="bd_cmt">2 Comments</span>
-                                        <span class="bd_likes">198 Likes</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="bd_img" style="width:320px">
-                                <a href="#">
-                                    <img src="../board/img/b1-06.jpg" alt="" style="width:320px;height:200px">
-                                    <div class="img_dimmed"></div>
-                                </a>
-                            </div>
-                            <div class="bd_lst_con">
-                                <div class="bd_lst_info">
-                                    <a href="#" class="bd_tit">블로그타입#1 예시 텍스트. 긴 제목 삽입의 경우 예시입니다.</a>
-                                    <p class="bd_content">블로그형 게시판의 일반형입니다. 게시판에 포스팅된 이미지가 좌측 썸네일로 노출됩니다. 이미지 썸네일, 게시글 제목, 글 내용, 작성자, 작성날짜, 카테고리, 댓글 수가 기본으로 노출됩니다. 이외의 항목 또한 설정하여 노...</p>
-                                    <div class="bd_info">
-                                        <span class="bd_writer">by <em class="bd_writer_name">XE(비로그인)</em></span>
-                                        <span class="bd_date">14.10.27</span>
-                                        <span class="bd_category"><a href="#">Design</a></span>
-                                        <span class="bd_cmt">2 Comments</span>
-                                        <span class="bd_likes">198 Likes</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        </ol>
-                    </div>
-                    <!-- /블로그 스타일 리스트 -->
-                    <div class="list_footer">
-                        <!-- BTN AREA -->
-                        <!-- [D] 관리자 모드시 노출 -->
-                        <div class="btn_area" style="display:none">
-                            <div class="btn_area_l">
-                                <a href="#" class="btn_type btn_lst" style="width:70px">
-                                    <i class="xe-list-ul-l"></i>
-                                    <span class="btn_txt">목록</span>
-                                </a>
-                                <div class="search_area">
-                                    <form action="" method="post">
-                                        <div class="search_select">
-                                            <select>
-                                            <option value="">제목+내용</option>
-                                            <option value="">제목</option>
-                                            <option value="">내용</option>
-                                            <option value="">댓글</option>
-                                            <option value="">이름</option>
-                                            <option value="">닉네임</option>
-                                            <option value="">아이디</option>
-                                            <option value="">태그</option>
-                                            </select>
-                                        </div>
-                                        <div class="search_con">
-                                            <input type="text" name="" value="" class="search_input" style="">
-                                            <a href="#" class="btn_type btn_search"><i class="xe-magnifier"></i><span class="blind">검색</span></a>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="btn_area_r">
-                                <a href="#" class="btn_type" style="width:70px">
-                                    <i class="xe-pen"></i>
-                                    <span class="btn_txt">쓰기</span>
-                                </a>
-                                <a href="#" class="btn_type" style="width:70px">
-                                    <i class="xe-tool"></i>
-                                    <span class="btn_txt">설정</span>
-                                </a>
-                                <a href="#" class="btn_type" style="width:104px">
-                                    <i class="xe-paper"></i>
-                                    <span class="btn_txt">게시글 관리</span>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- /BTN AREA -->
-                        <!-- PAGINATE -->
-                        <div class="bd_paginate">
-                            <a href="#" class="pg_btn tooltip">
-                                <i class="xe-angle-left"><span class="blind">이전</span></i>
-                                <span class="tooltip_wrap" style="margin-left: -16px; bottom: 100%; display: block;">
-                                    <span class="speech">Prev</span>
-                                    <i class="edge"></i>
-                                </span>
-                            </a>
-                            <a href="#" class="tooltip">1
-                                <span class="tooltip_wrap" style="margin-left: -28px; bottom: 100%; display: block;">
-                                    <span class="speech">첫 페이지</span>
-                                    <i class="edge"></i>
-                                </span>
-                            </a>
-                            <strong>2</strong>
-                            <a href="#">3</a>
-                            <a href="#">4</a>
-                            <a href="#">5</a>
-                            <a href="#">6</a>
-                            <a href="#">7</a>
-                            <a href="#">8</a>
-                            <a href="#">9</a>
-                            <a href="#">10</a>
-                            <div class="more_page">
-                                <a href="#" class="tooltip">...
-                                    <span class="tooltip_wrap" style="margin-left: -33px; bottom: 100%; display: block;">
-                                        <span class="speech">페이지 입력</span>
-                                        <i class="edge"></i>
-                                    </span>
-                                </a>
-                                <div class="page_box" style="margin-left:-89px;display: block;">
-                                    <input type="text" name="" value="" class="page_num">
-                                    <span class="page_total">/ 14</span>
-                                    <a href="#" class="btn_move">이동</a>
-                                    <span class="ico_edge"></span>
-                                </div>
-                            </div>
-                            <a href="#" class="tooltip">14
-                                <span class="tooltip_wrap" style="margin-left: -28px; bottom: 100%; display: block;">
-                                    <span class="speech">끝 페이지</span>
-                                    <i class="edge"></i>
-                                </span>
-                            </a>
-                            <a href="#" class="pg_btn tooltip">
-                                <i class="xe-angle-right"><span class="blind">다음</span></i>
-                                <span class="tooltip_wrap" style="margin-left: -18px; bottom: 100%; display: block;">
-                                    <span class="speech">Next</span>
-                                    <i class="edge"></i>
-                                </span>
-                            </a>
-                        </div>
-                        <!-- /PAGINATE -->
-                    </div>
-                </div>
-                <!-- /BOARD - Blog Style 1 -->
+                {$content}
     		</div>
     		<!-- /CONTENT -->
 		</div>
