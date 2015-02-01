@@ -250,15 +250,15 @@
 		<div class="content_wrap">
 		    <!-- SUB TITLE -->
 	        <div class="sub_title">
-	            <h1>{Context::get('mid')}</h1>
+	            <h1>{Context::getBrowserTitle()}</h1>
 	            <ul class="page_location">
                 <li><a href="{getSiteUrl()}">home</a></li>
                 <block loop="$GNB->list=>$key1,$val1" cond="$val1['selected']">
-                    <li class="last"|cond="!$val1['list']"><a href="{$val1['href']}">{$val1['link']}</a></li>
+                    <li class="last"|cond="$val1['link'] == Context::getBrowserTitle()"><a href="{$val1['href']}">{$val1['link']}</a></li>
                     {@$a=$val1['list']}
                 </block>
                 <block loop="$a=>$key2,$val2" cond="$val2['selected']">
-                    <li class="last"|cond="!$val2['list']"><a href="{$val2['href']}">{$val2['link']}</a></li>
+                    <li class="last"|cond="$val2['link'] == Context::getBrowserTitle()"><a href="{$val2['href']}">{$val2['link']}</a></li>
                 </block>
                 </ul>
             </div>
