@@ -98,37 +98,44 @@
                 <!-- /SEARCH -->
             </div>
             <div class="login_area">
-                <!-- before_login
+                <!-- before_login -->
+            <block cond="!$is_logged">
                 <a href="#"><i class="xe-user"></i><span class="blind">로그인/회원가입</span></a>
                 <div class="ly_login">
                     <ul>
-                    <li><a href="#">로그인</a></li>
-                    <li><a href="#">회원가입</a></li>
+                    <li><a href="{getUrl('act', 'dispMemberLoginForm')}">로그인</a></li>
+                    <li><a href="{getUrl('act', 'dispMemberSignUpForm')}">회원가입</a></li>
                     </ul>
                     <span class="edge"></span>
                 </div>
+            </block>
                 <!-- /before_login -->
                 
                 <!-- after_login -->
                 <!-- [D] 프로필 이미지를 등록하지 않았을 경우 기본 이미지 노출, alt 속성에는 프로필명 적용 -->
-                <a href="#" class="login_after"><img src="./img/ico_default.jpg" alt="OO님 프로필"></a>
+            <block cond="$is_logged">
+                <a href="{getUrl('', 'act', 'dispMemberInfo')}" class="login_after">
+                <!--@if($logged_info->profile_image)-->
+                    <img src="{$logged_info->profile_image->file}" alt="{$logged_info->nick_name}님 프로필">
+                <!--@else-->
+                    <img src="./layouts/XEcontest2014Blog/img/ico_default.jpg" alt="{$logged_info->nick_name}님 프로필">
+                <!--@end-->
+                </a>
                 <div class="ly_login">
                     <ul>
-                    <li><a href="#">회원정보 보기</a></li>
-                    <li><a href="#">스크랩 보기</a></li>
-                    <li><a href="#">저장함 보기</a></li>
-                    <li><a href="#">작성 글 보기</a></li>
-                    <li><a href="#">친구 보기</a></li>
-                    <li><a href="#">쪽지함 보기</a></li>
-                    <li class="logout"><a href="#">로그아웃</a></li>
+                    <li loop="$logged_info->menu_list => $key, $value">
+                        <a href="{getUrl('', 'act', $key)}">{Context::getLang($value)}</a>
+                    </li>
+                    <li class="logout"><a href="{getUrl('', 'act', 'dispMemberLogout')}">로그아웃</a></li>
                     </ul>
                     <span class="edge"></span>
                 </div>
+            </block>
                 <!-- /after_login -->
             </div>
             <!-- [D]회원이 관리자 권한을 가지고 있을 경우 노출  --> 
-            <div class="manage_area">
-                <a href="#"><i class="xe-tool"></i><span class="blind">관리</span></a>
+            <div cond="$logged_info->is_admin" class="manage_area">
+                <a href="{getUrl('', 'module', 'admin')}"><i class="xe-tool"></i><span class="blind">관리</span></a>
             </div>
             <div class="social_area">
                 <ul>
