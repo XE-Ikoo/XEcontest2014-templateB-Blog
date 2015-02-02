@@ -15,10 +15,6 @@
             <title xml:lang="ko">전역 네비게이션 바</title>
             <title xml:lang="en">Global Navigation Bar</title>
         </menu>
-		<menu name="sideBar" maxdepth="2" default="true">
-			<title xml:lang="ko">사이드바</title>
-			<title xml:lang="en">Side Bar</title>
-		</menu>
     </menus>
 	<extra_vars>
         <var name="backgroundImage" type="image">
