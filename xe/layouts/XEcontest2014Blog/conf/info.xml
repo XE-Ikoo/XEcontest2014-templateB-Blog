@@ -44,5 +44,15 @@
                 <title>white &amp; yellow</title>
             </options>
         </var>
+        <var name="blindText" type="text">
+            <title xml:lang="ko">블라인드 텍스트</title>
+            <title xml:lang="en">Blind text</title>
+            <description>이건 나도 뭔지 모르겠습니다.</description>
+        </var>
+        <var name="logoImage" type="image">
+            <title xml:lang="ko">로고 이미지</title>
+            <title xml:lang="en">Logo</title>
+            <description>720*290</description>
+        </var>
     </extra_vars>
 </layout>
