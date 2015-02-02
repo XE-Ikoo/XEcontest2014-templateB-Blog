@@ -20,5 +20,33 @@
 			<title xml:lang="en">Side Bar</title>
 		</menu>
     </menus>
-	<extra_vars />
+	<extra_vars>
+        <var name="backgroundImage" type="image">
+            <title xml:lang="ko">사이트 배경 이미지</title>
+            <title xml:lang="en">Site background image</title>
+            <description>1440*800</description>
+        </var>
+        <var name="backgroundImageType" type="select">
+            <title xml:lang="ko">사이트 배경 이미지 형식</title>
+            <title xml:lang="en">Site background image type</title>
+            <options value="fixed">
+                <title xml:lang="ko">고정</title>
+                <title xml:lang="en">Fixed</title>
+            </options>
+            <options value="pattern">
+                <title xml:lang="ko">반복 패턴</title>
+                <title xml:lang="en">pattern</title>
+            </options>
+        </var>
+        <var name="colorSet" type="select">
+            <title xml:lang="ko">컬러셋</title>
+            <title xml:lang="en">Color set</title>
+            <options value="blackAndYellow">
+                <title>black &amp; yellow</title>
+            </options>
+            <options value="whiteAndYellow">
+                <title>white &amp; yellow</title>
+            </options>
+        </var>
+    </extra_vars>
 </layout>

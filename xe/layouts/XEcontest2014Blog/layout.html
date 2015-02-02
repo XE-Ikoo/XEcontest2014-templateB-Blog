@@ -62,12 +62,18 @@
          black & yellow(기본형) : 클래스 없음 
          white & yellow        : color_white
          -->
-<body class="color_white">
+<body class="color_white"|cond="$layout_info->colorSet=='whiteAndYellow'">
 <div class="container">
     <!-- [D] 배경 이미지 고정형 : 이미지 사이즈 1440x800
                           배경 이지미 패턴형 : 클래스 pattern 추가 
                           배경 이미지 미사용 : 클래스 top_bg_none 추가 -->
-    <div class="top_bg top_bg_none" style="background-image:url(./layouts/XEcontest2014Blog/img/head_bg_img.png)"></div>
+<!--@if(!$layout_info->backgroundImage)-->
+    <div class="top_bg top_bg_none" style="background-image: url(./layouts/XEcontest2014Blog/img/head_bg_img.png)"></div>
+<!--@elseif($layout_info->backgroundImageType == 'fixed')-->
+    <div class="top_bg" style="background-image: url({$layout_info->backgroundImage})"></div>
+<!--@else-->
+    <div class="top_bg pattern" style="background-image: url({$layout_info->backgroundImage})"></div>
+<!--@end-->
 	<p class="skip"><a href="#content">메뉴 건너뛰기</a></p>
     <header class="header">
         <div class="top_section">
