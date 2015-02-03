@@ -54,5 +54,21 @@
             <title xml:lang="en">Logo</title>
             <description>720*290</description>
         </var>
+        <var name="subPageType" type="select">
+            <title xml:lang="ko">서브 페이지 타입</title>
+            <title xml:lang="en">Sub page type</title>
+            <options value="sub">
+                <title xml:lang="ko">왼쪽 사이드바</title>
+                <title xml:lang="en">Left side bar</title>
+            </options>
+            <options value="sub right">
+                <title xml:lang="ko">오른쪽 사이드바</title>
+                <title xml:lang="en">right side bar</title>
+            </options>
+            <options value="sub full">
+                <title xml:lang="ko">사이드바 없음</title>
+                <title xml:lang="en">No side bar</title>
+            </options>
+        </var>
     </extra_vars>
 </layout>
