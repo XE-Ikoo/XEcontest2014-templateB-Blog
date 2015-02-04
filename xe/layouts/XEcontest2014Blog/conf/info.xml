@@ -15,6 +15,10 @@
             <title xml:lang="ko">전역 네비게이션 바</title>
             <title xml:lang="en">Global Navigation Bar</title>
         </menu>
+        <menu name="LNB" maxdepth="2" default="true">
+            <title xml:lang="ko">지역 네비게이션 바</title>
+            <title xml:lang="en">Local Navigation Bar</title>
+        </menu>
     </menus>
 	<extra_vars>
         <group>

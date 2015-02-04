@@ -35,6 +35,8 @@
         var $loginEl = $('.login_area');
         var $containerEl = $('.container');
         var $gnbOffsetTop = $('.gnb').offset().top;
+        var $lnbOpen = $('.btn_open');
+        var $lnbClose = $('.btn_close');
         
         // Fixed header
         $(window).scroll(function() {
@@ -97,6 +99,22 @@
             });
         };
         scrollToTop();
+
+        // Open sub menu
+        $lnbOpen.click(
+            function(){
+                $(this).parent().addClass('open');
+                return false;
+            }
+        );
+
+        // Close sub menu
+        $lnbClose.click(
+            function(){
+                $(this).parent().removeClass('open');
+                return false;
+            }
+        );
         
     })
 })(jQuery);

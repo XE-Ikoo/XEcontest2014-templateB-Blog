@@ -182,33 +182,22 @@
 		    <nav class="lnb">
 		        <h2>Categories</h2>
                 <ul>
-                <li><a href="#">sub-menu</a></li>    
-                <li><a href="#">sub-menu</a></li> 
-                <!-- [D] 하위 메뉴가 존재할 경우 클래스 more 추가 및 열기/닫기 버튼 적용 --> 
-                <li class="more">
+                <!-- [D] 하위 메뉴가 존재할 경우 클래스 more 추가 및 열기/닫기 버튼 적용 -->
+                <li loop="$LNB->list=>$key, $val1" class="more{$val1['selected']?' open':''}"|cond="$val1['list']">
                     <!-- [D] 하위 메뉴 열기 클릭시 부모 요소인 li에 클래스 open 추가 -->
-                    <a href="#" class="btn_open"><span class="blind">하위 메뉴 열기</span><i class="xe-plus-square"></i></a>
-                    <a href="#" class="btn_close"><span class="blind">하위 메뉴 닫기</span><i class="xe-minus-square"></i></a>
-                    <a href="#">sub-menu</a>
-                    <ul class="more_info">
-                    <li><a href="#">menu</a></li>
-                    <li><a href="#">menu</a></li> 
-                    <li><a href="#">menu</a></li>     
-                    </ul>
-                </li>  
-                <li class="more open">
                     <!-- [D] 하위 메뉴 닫기 클릭시 부모 요소인 li에 클래스 open 삭제  -->
-                    <a href="#" class="btn_close"><span class="blind">하위 메뉴 닫기</span><i class="xe-minus-square"></i></a>
+                <block cond="$val1['list']">
                     <a href="#" class="btn_open"><span class="blind">하위 메뉴 열기</span><i class="xe-plus-square"></i></a>
-                    <a href="#">sub-menu</a>
-                    <ul class="more_info">
-                    <li><a href="#">menu</a></li>
-                    <li><a href="#">menu</a></li> 
-                    <li><a href="#">menu</a></li>     
+                    <a href="#" class="btn_close"><span class="blind">하위 메뉴 닫기</span><i class="xe-minus-square"></i></a>
+                </block>
+                    <a href="{$val1['href']}">{$val1['link']}</a>
+                    <ul cond="$val1['list']" class="more_info">
+                    <li loop="$val1['list']=>$key2, $val2">
+                        <a href="{$val2['href']}">{$val2['link']}</a>
+                    </li>
                     </ul>
                 </li>
-                <li><a href="#">sub-menu</a></li>  
-                </ul>		        
+                </ul>
 		    </nav>
 		    <div class="xe-widget-wrapper" style="margin:0px 0px 42px 0px;width:100%;height:264px;float:left">    
                 <div class="tb_simpleWidgetStyle">
