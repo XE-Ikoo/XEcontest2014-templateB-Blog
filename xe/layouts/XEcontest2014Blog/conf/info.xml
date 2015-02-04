@@ -74,5 +74,26 @@
                 </options>
             </var>
         </group>
+        <group>
+            <title xml:lang="ko">사이드 영역</title>
+            <title xml:lang="en">Side</title>
+            <var name="sideImage" type="image">
+                <title xml:lang="ko">사이드바 프로필 이미지</title>
+                <title xml:lang="en">Side bar profile image</title>
+                <description>200*160</description>
+            </var>
+            <var name="sideImageLink" type="text">
+                <title xml:lang="ko">사이드바 프로필 클릭시 링크</title>
+                <title xml:lang="en">Link of side image</title>
+            </var>
+            <var name="sideProfileTitle" type="textarea">
+                <title xml:lang="ko">사이드바 프로필 제목</title>
+                <title xml:lang="en">Side profile title</title>
+            </var>
+            <var name="sideProfile" type="textarea">
+                <title xml:lang="ko">사이드바 프로필</title>
+                <title xml:lang="en">Side profile</title>
+            </var>
+        </group>
     </extra_vars>
 </layout>

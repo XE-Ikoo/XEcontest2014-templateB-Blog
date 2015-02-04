@@ -170,9 +170,14 @@
 		<div class="sidebar">
 		    <div class="profile">
 		        <!-- [D] 이미지 기본 사이즈 200*160 -->
-		        <a href="#" class="thumb"><img src="./img/img_top_profile.png" alt=""></a>
-		        <h1>XpressEngine</h1>
-		        <p>누구나 쉽고 편하고 자유롭게 콘텐츠를 발행을 할 수 있도록 하기 위한 CMS</p>    
+		        <a href="{$layout_info->sideImageLink}#" class="thumb">
+                    <img cond="!$layout_info->sideImage" src="./layouts/XEcontest2014Blog/img/img_top_profile.png" alt="">
+                    <img cond="$layout_info->sideImage" src="{$layout_info->sideImage}" alt="">
+                </a>
+		        <h1 cond="!$layout_info->sideProfileTitle">XpressEngine</h1>
+                <h1 cond="$layout_info->sideProfileTitle">{$layout_info->sideProfileTitle}</h1>
+		        <p cond="!$layout_info->sideProfile">누구나 쉽고 편하고 자유롭게 콘텐츠를 발행을 할 수 있도록 하기 위한 CMS</p>
+                <p cond="$layout_info->sideProfile">{$layout_info->sideProfile}</p>
 		    </div>
 		    <nav class="lnb">
 		        <h2>Categories</h2>
