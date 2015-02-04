@@ -17,58 +17,62 @@
         </menu>
     </menus>
 	<extra_vars>
-        <var name="backgroundImage" type="image">
-            <title xml:lang="ko">사이트 배경 이미지</title>
-            <title xml:lang="en">Site background image</title>
-            <description>1440*800</description>
-        </var>
-        <var name="backgroundImageType" type="select">
-            <title xml:lang="ko">사이트 배경 이미지 형식</title>
-            <title xml:lang="en">Site background image type</title>
-            <options value="">
-                <title xml:lang="ko">고정</title>
-                <title xml:lang="en">Fixed</title>
-            </options>
-            <options value="pattern">
-                <title xml:lang="ko">반복 패턴</title>
-                <title xml:lang="en">pattern</title>
-            </options>
-        </var>
-        <var name="colorSet" type="select">
-            <title xml:lang="ko">컬러셋</title>
-            <title xml:lang="en">Color set</title>
-            <options value="blackAndYellow">
-                <title>black &amp; yellow</title>
-            </options>
-            <options value="whiteAndYellow">
-                <title>white &amp; yellow</title>
-            </options>
-        </var>
-        <var name="blindText" type="text">
-            <title xml:lang="ko">블라인드 텍스트</title>
-            <title xml:lang="en">Blind text</title>
-            <description>이건 나도 뭔지 모르겠습니다.</description>
-        </var>
-        <var name="logoImage" type="image">
-            <title xml:lang="ko">로고 이미지</title>
-            <title xml:lang="en">Logo</title>
-            <description>720*290</description>
-        </var>
-        <var name="subPageType" type="select">
-            <title xml:lang="ko">서브 페이지 타입</title>
-            <title xml:lang="en">Sub page type</title>
-            <options value="sub">
-                <title xml:lang="ko">왼쪽 사이드바</title>
-                <title xml:lang="en">Left side bar</title>
-            </options>
-            <options value="sub right">
-                <title xml:lang="ko">오른쪽 사이드바</title>
-                <title xml:lang="en">right side bar</title>
-            </options>
-            <options value="sub full">
-                <title xml:lang="ko">사이드바 없음</title>
-                <title xml:lang="en">No side bar</title>
-            </options>
-        </var>
+        <group>
+            <title xml:lang="ko">기본 설정</title>
+            <title xml:lang="en">Basic setting</title>
+            <var name="backgroundImage" type="image">
+                <title xml:lang="ko">사이트 배경 이미지</title>
+                <title xml:lang="en">Site background image</title>
+                <description>1440*800</description>
+            </var>
+            <var name="backgroundImageType" type="select">
+                <title xml:lang="ko">사이트 배경 이미지 형식</title>
+                <title xml:lang="en">Site background image type</title>
+                <options value="">
+                    <title xml:lang="ko">고정</title>
+                    <title xml:lang="en">Fixed</title>
+                </options>
+                <options value="pattern">
+                    <title xml:lang="ko">반복 패턴</title>
+                    <title xml:lang="en">pattern</title>
+                </options>
+            </var>
+            <var name="colorSet" type="select">
+                <title xml:lang="ko">컬러셋</title>
+                <title xml:lang="en">Color set</title>
+                <options value="blackAndYellow">
+                    <title>black &amp; yellow</title>
+                </options>
+                <options value="whiteAndYellow">
+                    <title>white &amp; yellow</title>
+                </options>
+            </var>
+            <var name="blindText" type="text">
+                <title xml:lang="ko">블라인드 텍스트</title>
+                <title xml:lang="en">Blind text</title>
+                <description>이건 나도 뭔지 모르겠습니다.</description>
+            </var>
+            <var name="logoImage" type="image">
+                <title xml:lang="ko">로고 이미지</title>
+                <title xml:lang="en">Logo</title>
+                <description>720*290</description>
+            </var>
+            <var name="subPageType" type="select">
+                <title xml:lang="ko">서브 페이지 타입</title>
+                <title xml:lang="en">Sub page type</title>
+                <options value="sub">
+                    <title xml:lang="ko">왼쪽 사이드바</title>
+                    <title xml:lang="en">Left side bar</title>
+                </options>
+                <options value="sub right">
+                    <title xml:lang="ko">오른쪽 사이드바</title>
+                    <title xml:lang="en">right side bar</title>
+                </options>
+                <options value="sub full">
+                    <title xml:lang="ko">사이드바 없음</title>
+                    <title xml:lang="en">No side bar</title>
+                </options>
+            </var>
+        </group>
     </extra_vars>
 </layout>
