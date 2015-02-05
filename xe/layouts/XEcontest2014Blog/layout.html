@@ -165,9 +165,9 @@
 	         left sidebar  : body sub 
 	         right sidebar : body sub right 
 	         full width    : body suv full -->
-	<div class="body {$layout_info->subPageType}">
+	<div class="body{$layout_info->subPageType?' '.$layout_info->subPageType:''}">
 		<!-- SIDE BAR -->
-		<div class="sidebar">
+		<div cond="$layout_info->subPageType" class="sidebar">
 		    <div class="profile">
 		        <!-- [D] 이미지 기본 사이즈 200*160 -->
 		        <a href="{$layout_info->sideImageLink}#" class="thumb">
@@ -255,7 +255,7 @@
 		<!-- /SIDE BAR -->
 		<div class="content_wrap">
 		    <!-- SUB TITLE -->
-	        <div class="sub_title">
+	        <div cond="$layout_info->subPageType" class="sub_title">
 	            <h1>{Context::getBrowserTitle()}</h1>
 	            <ul class="page_location">
                 <li><a href="{getSiteUrl()}">home</a></li>
