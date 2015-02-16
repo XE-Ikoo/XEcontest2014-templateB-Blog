@@ -137,9 +137,9 @@
             </div>
             <div class="social_area">
                 <ul>
-                <li><a href="#"><i class="xe-twitter"></i><span class="blind">twitter</span></a></li> 
-                <li><a href="#"><i class="xe-facebook"></i><span class="blind">facebook</span></a></li>
-                <li><a href="#"><i class="xe-medium"></i><span class="blind">medium</span></a></li>   
+                <li cond="$layout_info->socialTwitter"><a href="{$layout_info->socialTwitter}" target="_blank"><i class="xe-twitter"></i><span class="blind">twitter</span></a></li>
+                <li cond="$layout_info->socialFacebook"><a href="{$layout_info->socialFacebook}" target="_blank"><i class="xe-facebook"></i><span class="blind">facebook</span></a></li>
+                <li cond="$layout_info->socialMedium"><a href="{$layout_info->socialMedium}" target="_blank"><i class="xe-medium"></i><span class="blind">medium</span></a></li>
                 </ul>
             </div>    
                 
@@ -300,11 +300,11 @@
             <div class="explore">
                 <h2 class="f_title">Explore</h2>
                 <ul class="lst_sns">
-                <li><a href="#"><i class="xe-facebook"></i><span class="blind">Facebook</span></a></li>
-                <li><a href="#"><i class="xe-twitter"></i><span class="blind">Twitter</span></a></li>
-                <li><a href="#"><i class="xe-linkedin"></i><span class="blind">Linkedin</span></a></li>
-                <li><a href="#"><i class="xe-google-plus"></i><span class="blind">Google plus</span></a></li>
-                <li><a href="#"><i class="xe-github"></i><span class="blind">Github</span></a></li>
+                <li cond="$layout_info->socialFacebook"><a href="{$layout_info->socialFacebook}" target="_blank"><i class="xe-facebook"></i><span class="blind">Facebook</span></a></li>
+                <li cond="$layout_info->socialTwitter"><a href="{$layout_info->socialTwitter}" target="_blank"><i class="xe-twitter"></i><span class="blind">Twitter</span></a></li>
+                <li cond="$layout_info->socialLinkedIn"><a href="{$layout_info->socialLinkedIn}" target="_blank"><i class="xe-linkedin"></i><span class="blind">Linkedin</span></a></li>
+                <li cond="$layout_info->socialGooglePlus"><a href="{$layout_info->socialGooglePlus}" target="_blank"><i class="xe-google-plus"></i><span class="blind">Google plus</span></a></li>
+                <li cond="$layout_info->socialGitHub"><a href="{$layout_info->socialGitHub}" target="_blank"><i class="xe-github"></i><span class="blind">Github</span></a></li>
                 </ul>    
             </div>
             <div class="xe-widget-wrapper" style="margin:0px 0px 68px 0px;width:285px;height:65px;float:left">    

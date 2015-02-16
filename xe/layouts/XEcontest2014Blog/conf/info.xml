@@ -103,5 +103,33 @@
                 <title xml:lang="en">Side profile</title>
             </var>
         </group>
+        <group>
+            <title xml:lang="ko">소셜 설정</title>
+            <title xml:lang="en">Social</title>
+            <var name="socialFacebook" type="text">
+                <title xml:lang="ko">페이스북</title>
+                <title xml:lang="en">Facebook</title>
+            </var>
+            <var name="socialTwitter" type="text">
+                <title xml:lang="ko">트위터</title>
+                <title xml:lang="en">Twitter</title>
+            </var>
+            <var name="socialLinkedIn" type="text">
+                <title xml:lang="ko">링크드인</title>
+                <title xml:lang="en">LinkedIn</title>
+            </var>
+            <var name="socialGooglePlus" type="text">
+                <title xml:lang="ko">구글 플러스</title>
+                <title xml:lang="en">Google+</title>
+            </var>
+            <var name="socialGitHub" type="text">
+                <title xml:lang="ko">깃허브</title>
+                <title xml:lang="en">GitHub</title>
+            </var>
+            <var name="socialMedium" type="text">
+                <title xml:lang="ko">socialMedium</title>
+                <title xml:lang="en">socialMedium</title>
+            </var>
+        </group>
     </extra_vars>
 </layout>
