@@ -321,7 +321,13 @@
                     </div>
                 </div>
             </div>
-            <p class="copyright">Copyright @ <a href="#">NAVER Corp.</a>Supported by <a href="#">D2 Program</a>.</p>  
+            <p class="copyright">
+            <!--@if($layout_info->copyright)-->
+                {$layout_info->copyright}
+            <!--@else-->
+                Copyright @ <a href="#">NAVER Corp.</a>Supported by <a href="#">D2 Program</a>.
+            <!--@end-->
+            </p>
         </footer>
     </div>
 </div>
