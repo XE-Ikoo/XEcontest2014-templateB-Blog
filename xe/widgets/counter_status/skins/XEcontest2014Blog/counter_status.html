@@ -1,0 +1,11 @@
+<load target="./css/widget.counter.css" />
+<div class="widgetContainer">
+    <div class="tb_widgetConuter">
+        <dl>
+            <dt class="blind">today</dt>
+            <dd class="today_num">{number_format($today_counter->unique_visitor)}</dd>
+            <dt class="total">TOTAL</dt>
+            <dd class="total num">{number_format($total_counter->unique_visitor)}</dd>
+        </dl>
+    </div>
+</div>
