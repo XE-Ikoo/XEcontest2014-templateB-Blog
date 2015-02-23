@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin version="0.2">
+    <title xml:lang="ko">Content 위젯 XEcontest2014Blog 스킨</title>
+    <title xml:lang="en">XEcontest2014Blog skin for content widget</title>
+    <description xml:lang="ko">Content 위젯 XEcontest2014Blog 스킨 입니다.</description>
+    <description xml:lang="en">XEcontest2014Blog skin for content widget</description>
+    <version>1.0</version>
+    <date>2015-02-23</date>
+    <link>http://www.zfanta.com/</link>
+
+    <author email_address="jht008@gmail.com" link="http://www.zfanta.com/">
+        <name>zfanta</name>
+    </author>
+
+    <colorset />
+</skin>

@@ -1,0 +1,5 @@
+<ul class="tb_widgetB">
+<li loop="$widget_info->content_items => $key, $item">
+	<a href="{$item->getLink()}" target="_blank"|cond="$widget_info->new_window">{$item->getTitle($widget_info->subject_cut_size)}</a>
+</li>
+</ul>
