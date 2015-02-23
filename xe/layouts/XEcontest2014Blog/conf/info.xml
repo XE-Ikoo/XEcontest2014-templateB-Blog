@@ -102,6 +102,11 @@
                 <title xml:lang="ko">사이드바 프로필</title>
                 <title xml:lang="en">Side profile</title>
             </var>
+            <var name="recentArticlesMids" type="textarea">
+                <title xml:lang="ko">Recent articles에 표시될 게시판</title>
+                <title xml:lang="en">Boards to display in recent articles widget</title>
+                <description>module_srl, module_srl, ..., module_srl (not mid)</description>
+            </var>
         </group>
         <group>
             <title xml:lang="ko">소셜 설정</title>
