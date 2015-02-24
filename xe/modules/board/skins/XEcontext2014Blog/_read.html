@@ -1,0 +1,265 @@
+<div class="board_read">
+	<!-- READ HEADER -->
+	<div class="read_header">
+		<h2 class="tit">
+			<a href="{$oDocument->getPermanentUrl()}">{$oDocument->getTitle()}</a>
+		</h2>
+		<div class="write_info">
+			<span class="txt_piece">by</span><a href="#popup_menu_area" class="author member_{$oDocument->get('member_srl')}">{$oDocument->getNickName()}</a>
+			<a cond="$module_info->use_category=='Y'" href="{getUrl('category',$oDocument->get('category_srl'), 'document_srl', '')}" class="category">{$category_list[$oDocument->get('category_srl')]->title}</a>
+			<span class="time">{$oDocument->getRegdate('y.m.d')}</span>
+		</div>
+		<div class="meta">
+			<ul class="meta_l">
+				<li class="hits" title="조회수"><i class="xe-eye"><span class="blind">조회수</span></i><span>{$oDocument->get('readed_count')} views</span></li>
+				<li class="cmt" title="댓글"><i class="xe-comment-bubble"><span class="blind">댓글</span></i><span>{$oDocument->getCommentCount()} comments</span></li>
+				<li class="likeit" title="like it"><i class="xe-heart"><span class="blind">like it</span></i><span>{$oDocument->get('voted_count')} likes</span></li>
+			</ul>
+			<div class="meta_r">
+				<a href="#" class="url">{$oDocument->getPermanentUrl()}</a>
+				<button class="btn_copy">복사</button>
+			</div>
+		</div>
+		<div class="func_bar">
+			<ul class="func_bar_lst">
+				<li>
+					<!-- [D] 선택 시 class="on" 추가 -->
+					<a href="#" class="tooltip">
+						<i class="xe-magnifier-expand"></i>
+						<span class="tooltip_wrap" style="margin-left: -16px; bottom: 100%; display: none;">
+							<span class="speech">크게</span>
+							<i class="edge"></i>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="tooltip">
+						<i class="xe-magnifier-reduce"></i>
+						<span class="tooltip_wrap" style="margin-left: -16px; bottom: 100%; display: none;">
+							<span class="speech">작게</span>
+							<i class="edge"></i>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="tooltip">
+						<i class="xe-arrow-down"></i>
+						<span class="tooltip_wrap" style="margin-left: -36px; bottom: 100%; display: none;">
+							<span class="speech">(컨텐츠)아래로</span>
+							<i class="edge"></i>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="tooltip">
+						<i class="xe-comment-bubble"></i>
+						<span class="tooltip_wrap" style="margin-left: -33px; bottom: 100%; display: none;">
+							<span class="speech">댓글로 가기</span>
+							<i class="edge"></i>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="tooltip">
+						<i class="xe-heart"></i>
+						<span class="tooltip_wrap" style="margin-left: -21px; bottom: 100%; display: none;">
+							<span class="speech">Like it</span>
+							<i class="edge"></i>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="tooltip">
+						<i class="xe-print-paper"></i>
+						<span class="tooltip_wrap" style="margin-left: -16px; bottom: 100%; display: none;">
+							<span class="speech">인쇄</span>
+							<i class="edge"></i>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="#popup_menu_area" class="tooltip document_{$oDocument->document_srl}">
+						<i class="xe-ellipsis-h"></i>
+						<span class="tooltip_wrap" style="margin-left: -33px; bottom: 100%; display: none;">
+							<span class="speech">이 게시물을</span>
+							<i class="edge"></i>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="{getUrl('act','dispBoardWrite','document_srl',$oDocument->document_srl,'comment_srl','')}" class="w_type">
+						<i class="xe-pen"></i>
+						<span class="btn_txt">수정</span>
+					</a>
+				</li>
+				<li>
+					<a href="{getUrl('act','dispBoardDelete','document_srl',$oDocument->document_srl,'comment_srl','')}" class="w_type">
+						<i class="xe-close"></i>
+						<span class="btn_txt">삭제</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /READ HEADER -->
+	<!-- READ BODY -->
+	<div class="read_body">
+		<h3 class="blind">게시물 내용</h3>
+		<div class="xe_content">
+			{$oDocument->getContent(false)}
+		</div>
+	</div>
+	<!-- /READ BODY -->
+	<!-- READ FOOTER -->
+	<div class="read_footer">
+		<div cond="count($oDocument->get('tag_list'))" class="tags">
+			<i class="xe-tag-lefts ico_tag"><span class="blind">태그</span></i>
+			{@ $tagCount = 0}
+			<block loop="$oDocument->get('tag_list') => $tag">
+				<span cond="$tagCount++ != 0" class="comma">,</span>
+				<a href="{getUrl('search_target','tag','search_keyword',$tag,'document_srl','')}" class="tag">{htmlspecialchars($tag)}</a>
+			</block>
+		</div>
+		<div class="sns">
+			<ul>
+				<li>
+					<a href="#" class="tooltip">
+						<i class="xe-facebook"></i>
+						<span class="tooltip_wrap" style="margin-left: -30px; bottom: 100%; display: none;">
+							<span class="speech">Facebook</span>
+							<i class="edge"></i>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="tooltip">
+						<i class="xe-google-plus"></i>
+						<span class="tooltip_wrap" style="margin-left: -25px; bottom: 100%; display: none;">
+							<span class="speech">Google</span>
+							<i class="edge"></i>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="tooltip">
+						<i class="xe-twitter"></i>
+						<span class="tooltip_wrap" style="margin-left: -25px; bottom: 100%; display: none;">
+							<span class="speech">Twitter</span>
+							<i class="edge"></i>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="tooltip">
+						<i class="xe-pinterest"></i>
+						<span class="tooltip_wrap" style="margin-left: -29px; bottom: 100%; display: none;">
+							<span class="speech">Pinterest</span>
+							<i class="edge"></i>
+						</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="etc">
+			<div cond="$oDocument->hasUploadedFiles()" class="file_lst">
+				<span class="files_cnt">첨부 ‘{$oDocument->get('uploaded_count')}’</span>
+				{@ $fileCount = 0}
+				<block loop="$oDocument->getUploadedFiles()=>$file">
+					<a href="{getUrl('')}{$file->download_url}" class="file">{$file->source_filename}</a>
+					<span cond="$fileCount++ != 0" class="comma">,</span>
+				</block>
+			</div>
+			<div class="btn_area">
+				<div class="btn_area_l">
+					<a href="{getUrl('document_srl','')}" class="btn_lst">
+						<i class="xe-list-ul-l"></i>
+						<span class="btn_txt">목록</span>
+					</a>
+				</div>
+				<div class="btn_area_r">
+					<ul class="func_bar_lst">
+						<li>
+							<!-- [D] 선택 시 class="on" 추가 -->
+							<a href="#" class="tooltip">
+								<i class="xe-arrow-up"></i>
+								<span class="tooltip_wrap" style="margin-left: -36px; bottom: 100%; display: none;">
+									<span class="speech">(컨텐츠)위로</span>
+									<i class="edge"></i>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="tooltip">
+								<i class="xe-heart"></i>
+								<span class="tooltip_wrap" style="margin-left: -21px; bottom: 100%; display: none;">
+									<span class="speech">Like it</span>
+									<i class="edge"></i>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="tooltip">
+								<i class="xe-print-paper"></i>
+								<span class="tooltip_wrap" style="margin-left: -16px; bottom: 100%; display: none;">
+									<span class="speech">인쇄</span>
+									<i class="edge"></i>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="tooltip">
+								<i class="xe-ellipsis-h"></i>
+								<span class="tooltip_wrap" style="margin-left: -33px; bottom: 100%; display: none;">
+									<span class="speech">이 게시물을</span>
+									<i class="edge"></i>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="w_type">
+								<i class="xe-pen"></i>
+								<span class="btn_txt">수정</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="w_type">
+								<i class="xe-close"></i>
+								<span class="btn_txt">삭제</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="sign">
+				<div class="sign_tit">
+					<span class="">글쓴이</span>
+				</div>
+				<div class="sign_con">
+					<!-- [D] 등록된 글쓴이 이미지 width, height 적용 -->
+					<img src="../board/img/thumb_xe_80.png" alt="" style="width:80px;height:80px" class="sign_img">
+					<div class="sign_desc">
+						<span class="writer_name">XpressEngin</span>
+						<p class="writer_desc">누구나 쉽고 편하고 자유롭게 콘텐츠를 발행을 할 수 있도록 하기 위한 CMS(Content Management System)입니다.<br>급변하는 인터넷 환경과 다양한 기능의 요구에 부응하기 위해 노력합니다.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /READ FOOTER -->
+	<!-- PREV, NEXT PAGE ARROW BUTTON -->
+	<a href="#" class="btn_page prev_page" style="top: 470px; left: -80px; width: 50px;">
+		<i class="xe-angle-left"></i>
+		<div class="panel" style="display: none;">
+			<span class="panel_tit">이전글</span>
+			<p class="panel_con">이전글 제목, 타이틀 정보가 노출 됩니다. 2줄 말줄임 필요(글자수제한)</p>
+		</div>
+	</a>
+	<a href="#" class="btn_page next_page" style="top: 470px; right: -80px; width: 50px;">
+		<i class="xe-angle-right"></i>
+		<div class="panel" style="display: none;">
+			<span class="panel_tit">다음글</span>
+			<p class="panel_con">다음글 제목, 타이틀 정보가 노출 됩니다. 2줄 말줄임 필요(글자수제한)</p>
+		</div>
+	</a>
+	<!-- /PREV, NEXT PAGE ARROW BUTTON -->
+</div>
