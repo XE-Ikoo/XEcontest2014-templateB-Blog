@@ -1,0 +1,10 @@
+<!-- 게시판 CSS, JS -->
+<load target="../../../editor/styles/default/style.css" />
+<load target="css/board.default.css" />
+<load target="css/board.default_ie8.css" targetie="lt IE 9"/>
+<load target="js/board.default.js" type="body" />
+<load target="js/masonry.pkgd.min.js" type="body" />
+<!-- /게시판 css -->
+<block cond="!$module_info->duration_new = (int)$module_info->duration_new">{@ $module_info->duration_new = 12 }</block>
+<div class="board">
+	{$module_info->header_text}
