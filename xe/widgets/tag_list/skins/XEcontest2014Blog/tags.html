@@ -1,0 +1,10 @@
+<load target="css/widget.tag.css" />
+
+<div class="widgetContainer">
+    <div class="tb_widgetTag">
+        <block loop="$widget_info->tag_list => $val">
+            <a cond="$widget_info->mid" href="{getUrl('','mid',$widget_info->mid,'search_target','tag','search_keyword',$val->tag)}">{htmlspecialchars($val->tag)}</a>
+            <a cond="!$widget_info->mid" href="{getUrl('act','IS','where','document','search_target','tag','is_keyword',$val->tag)}">{htmlspecialchars($val->tag)}</a>
+        </block>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin version="0.2">
+	<title>XEcontest2014Blog</title>
+	<description xml:lang="ko">태그 목록을 출력합니다.</description>
+	<description xml:lang="en">It displays tag list.</description>
+	<version>1.0</version>
+	<date>2015-02-24</date>
+	<link>http://www.zfanta.com</link>
+
+	<author email_address="jht008@gmail.com" link="http://www.zfanta.com">
+		<name>zfanta</name>
+	</author>
+</skin>
