@@ -112,6 +112,11 @@
                 <title xml:lang="en">Boards to display in recent comments widget</title>
                 <description>module_srl, module_srl, ..., module_srl (not mid)</description>
             </var>
+            <var name="tagListModules" type="textarea">
+                <title xml:lang="ko">태그 위젯에 출력할 게시판</title>
+                <title xml:lang="en">Boards to display in tag widget</title>
+                <description>module_srl, module_srl, ..., module_srl (not mid)</description>
+            </var>
         </group>
         <group>
             <title xml:lang="ko">소셜 설정</title>
