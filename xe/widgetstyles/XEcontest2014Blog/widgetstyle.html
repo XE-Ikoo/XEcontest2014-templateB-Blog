@@ -1,0 +1,19 @@
+<load target="css/widgetstyle.blog.css" />
+<!--@if($widgetstyle_extra_var->ws_colorset == 'gallery')-->
+    {@ $_wsClassName = 'h_title'}
+<!--@elseif($widgetstyle_extra_var->ws_colorset == 'list')-->
+    {@ $_wsClassName = 'h_title v2'}
+<!--@elseif($widgetstyle_extra_var->ws_colorset == 'guestBook')-->
+    {@ $_wsClassName = 'h_title v3'}
+<!--@else-->
+    {@ $_wsClassName = 'h_title v4'}
+<!--@end-->
+
+<div class="tb_simpleWidgetStyle">
+<!--@if($widgetstyle_extra_var->ws_more_url)-->
+    <a href="{$widgetstyle_extra_var->ws_more_url}" class="widgetMoreLink"><h2 class="{$_wsClassName}">{$widgetstyle_extra_var->ws_title}</h2></a>
+<!--@else-->
+    <h2 class="{$_wsClassName}">{$widgetstyle_extra_var->ws_title}</h2>
+<!--@end-->
+    {$widget_content}
+</div>

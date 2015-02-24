@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgetstyle>
+    <title>XEcontest2014Blog</title>
+    <description>XEcontest2014Blog</description>
+    <version>1.0</version>
+    <date>2015-02-24</date>
+    <preview>preview.gif</preview>
+
+    <author email_address="jht008@gmail.com" link="http://www.zfanta.com/">
+        <name>zfanta</name>
+    </author>
+
+    <extra_vars>
+        <var name="ws_colorset" type="select">
+            <title xml:lang="ko">형식</title>
+            <title xml:lang="en">Type</title>
+            <description xml:lang="ko">형식을 지정해주세요</description>
+            <description xml:lang="en">Choose type</description>
+            <options>
+                <name xml:lang="ko">웹진형, 갤러리형</name>
+                <name xml:lang="en">Webzine, gallery</name>
+		        <value>gallery</value>
+            </options>
+            <options>
+                <name xml:lang="ko">목록형</name>
+                <name xml:lang="en">List</name>
+                <value>list</value>
+            </options>
+            <options>
+                <name xml:lang="ko">방명록</name>
+                <name xml:lang="en">Guest book</name>
+                <value>guestBook</value>
+            </options>
+            <options>
+            <name xml:lang="ko">사이드바</name>
+            <name xml:lang="en">Sidebar</name>
+            <value>sideBar</value>
+        </options>
+        </var>
+        <var name="ws_title" type="text">
+            <name xml:lang="ko">제목</name>
+            <name xml:lang="en">Title</name>
+            <description xml:lang="ko">제목 텍스트</description>
+            <description xml:lang="en">Title text</description>
+        </var>
+        <var name="ws_more_url" type="text">
+            <name xml:lang="ko">더보기 URL</name>
+            <name xml:lang="en">more URL</name>
+        </var>
+    </extra_vars>
+</widgetstyle>
