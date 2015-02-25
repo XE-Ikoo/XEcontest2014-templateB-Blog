@@ -1,0 +1,84 @@
+<include target="_header.html" />
+<!-- 게시물 등록 영역 -->
+<div class="board_write">
+	<form id="write_form" action="./" method="post" onsubmit="return procFilter(this, window.insert)">
+		<input type="hidden" name="mid" value="{$mid}" />
+		<input type="hidden" name="content" value="{$oDocument->getContentText()}" />
+		<input type="hidden" name="document_srl" value="{$document_srl}" />
+		<div class="write_header">
+			<!-- [D] 분류 적용 시 노출 -->
+			<div class="search_select" style="display:block">
+				<select name="category_srl" cond="$module_info->use_category=='Y'">
+					<option value="">{$lang->category}</option>
+					<option loop="$category_list => $val" disabled="disabled"|cond="!$val->grant" value="{$val->category_srl}" selected="selected"|cond="$val->grant&&$val->selected||$val->category_srl==$oDocument->get('category_srl')">
+						{str_repeat("&nbsp;&nbsp;",$val->depth)} {$val->title} ({$val->document_count})
+					</option>
+				</select>
+			</div>
+			<div class="search_con">
+				<input type="text" name="title" value="{htmlspecialchars($oDocument->getTitleText())}" class="search_input" style="">
+			</div>
+		</div>
+		<!-- 스마트 에디터 적용 영역 -->
+		<div class="write_editor">
+			<!-- [D] 임시 이미지 제거 후 에디터 추가 -->
+			{$oDocument->getEditor()}
+		</div>
+		<!-- /스마트 에디터 적용 영역 -->
+		<div class="write_footer">
+			<div class="tag_area">
+				<label for="tag_input" class="blind">태그입력</label>
+				<input type="text" id="tag_input" name="" placeholder="쉼표(,)를 이용하여 태그를 복수 등록 할 수 있습니다." value="" class="tag_input" style="">
+			</div>
+			<div class="write_func_check">
+				<span>
+					<input type="checkbox" id="write_cb1" name="title_bold" value="Y"><label for="write_cb1">제목 굵게</label>
+				</span>
+				<span>
+					<input type="checkbox" id="write_cb2" name="is_notice" value="Y"><label for="write_cb2">공지</label>
+				</span>
+				<span>
+					<input type="checkbox" id="write_cb3" name="comment_status" value="ALLOW"><label for="write_cb3">댓글 허용</label>
+				</span>
+				<span>
+					<input type="checkbox" id="write_cb4" name="allow_trackback" value="Y"><label for="write_cb4">엮인글 허용</label>
+				</span>
+				<span>
+					<input type="checkbox" id="write_cb5" name="notify_message" value="Y"><label for="write_cb5">알림</label>
+				</span>
+				<span>
+					<input type="radio" id="write_rd1" name="" value="Y"><label for="write_rd1">공개</label>
+				</span>
+				<!-- [D] 게시판 설정에서 비공개 체크 시 노출 -->
+				<span style="display:none">
+					<input type="radio" id="write_rd2" name="" value="Y"><label for="write_rd2">비공개</label>
+				</span>
+			</div>
+			<div class="write_btn_area">
+				<div class="write_btn_area_l">
+					<a href="#" class="btn_type btn_back" style="width:90px">
+						<i class="xe-arrow-left"></i>
+						<span class="btn_txt">돌아가기</span>
+					</a>
+				</div>
+				<div class="write_btn_area_r">
+					<a cond="$is_logged" href="#" class="btn_type btn_temp_save" onclick="jQuery('#tmp_save_btn').trigger('click');return false" style="width:90px">
+						<i class="xe-download"></i>
+						<span class="btn_txt">임시저장</span>
+						<button cond="$is_logged" id="tmp_save_btn" type="button" onclick="doDocumentSave(this);" style="display:none">{$lang->cmd_temp_save}</button>
+					</a>
+					<a href="#" class="btn_type btn_preview" style="width:90px">
+						<i class="xe-paper"></i>
+						<span class="btn_txt">미리보기</span>
+					</a>
+					<a href="#" class="btn_type btn_sumbit" onclick="return procFilter(xGetElementById('write_form'), window.insert)" style="width:70px">
+						<i class="xe-pen"></i>
+						<span class="btn_txt">등록</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<!-- /게시물 등록 영역 -->
+<include target="_footer.html" />
