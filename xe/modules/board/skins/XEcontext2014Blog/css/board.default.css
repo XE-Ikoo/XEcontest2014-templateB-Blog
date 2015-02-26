@@ -336,6 +336,9 @@
 .lst_header .lst_toggle{float:right;margin-top:2px;color:#9d9d9d}
 .lst_header .lst_toggle .lst_txt{margin-right:2px;vertical-align:middle}
 .lst_header .lst_toggle .lst_arrow{font-size:13px;vertical-align:middle}
+.lst_header .fb_toggle{float:right;margin-top:2px;color:#9d9d9d}
+.lst_header .fb_toggle .fb_txt{margin-right:2px;vertical-align:middle}
+.lst_header .fb_toggle .fb_arrow{font-size:13px;vertical-align:middle}
 
 .cmt_item{position:relative;padding:16px 0;*zoom:1}
 .cmt_item:after{content:"";display:block;clear:both}

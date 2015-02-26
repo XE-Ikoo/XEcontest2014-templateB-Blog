@@ -163,6 +163,20 @@ jQuery(function($) {
         window.open('//pinterest.com/pin/create/bookmarklet/?url='+url+'&description='+title);
         return false;
     });
+
+    // comment
+    $('.comment .lst_toggle').click(function(){
+        $(this).hide();
+        $('.cmt_lst_wrap').hide();
+        $('.comment .fb_toggle').show();
+        return false;
+    });
+    $('.comment .fb_toggle').click(function(){
+        $(this).hide();
+        $('.cmt_lst_wrap').show();
+        $('.comment .lst_toggle').show();
+        return false;
+    });
 });
 
 
