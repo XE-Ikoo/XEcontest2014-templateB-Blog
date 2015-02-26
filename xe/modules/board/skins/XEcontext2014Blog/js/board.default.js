@@ -124,7 +124,13 @@ jQuery(function($) {
         content.css('font-size',''+fontSize+'px');
         return false;
     });
-    
+    $('.tooltip .xe-arrow-down').parent().click(function(){
+        $('html, body').animate({scrollTop:$('.board_list').position().top + $(window).height()/2 - 56});
+    });
+    $('.tooltip .xe-comment-bubble').parent().click(function(){
+        $('html, body').animate({scrollTop:$('.comment').position().top + $(window).height()/2 - 56});
+        $('body').scroll($('.comment'));
+    });
 });
 
 
