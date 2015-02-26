@@ -125,11 +125,43 @@ jQuery(function($) {
         return false;
     });
     $('.tooltip .xe-arrow-down').parent().click(function(){
-        $('html, body').animate({scrollTop:$('.board_list').position().top + $(window).height()/2 - 56});
+        $('html, body').animate({scrollTop:$('.board_list').position().top});
     });
     $('.tooltip .xe-comment-bubble').parent().click(function(){
-        $('html, body').animate({scrollTop:$('.comment').position().top + $(window).height()/2 - 56});
-        $('body').scroll($('.comment'));
+        $('html, body').animate({scrollTop:$('.comment').position().top});
+    });
+    $('.tooltip .xe-arrow-up').parent().click(function(){
+        $('html, body').animate({scrollTop:$('.board_read').position().top});
+    });
+
+    // SNS
+    $('.sns .xe-facebook').parent().click(function(){
+        var p = $(this).closest('.sns');
+        var url = p.attr('data-url');
+        var title = p.attr('data-title');
+        window.open('//www.facebook.com/sharer/sharer.php?u='+url+'&t='+title);
+        return false;
+    });
+    $('.sns .xe-google-plus').parent().click(function(){
+        var p = $(this).closest('.sns');
+        var url = p.attr('data-url');
+        var title = p.attr('data-title');
+        window.open('//plus.google.com/share?url='+url);
+        return false;
+    });
+    $('.sns .xe-twitter').parent().click(function(){
+        var p = $(this).closest('.sns');
+        var url = p.attr('data-url');
+        var title = p.attr('data-title');
+        window.open('//twitter.com/home?status='+title+' '+url);
+        return false;
+    });
+    $('.sns .xe-pinterest').parent().click(function(){
+        var p = $(this).closest('.sns');
+        var url = p.attr('data-url');
+        var title = p.attr('data-title');
+        window.open('//pinterest.com/pin/create/bookmarklet/?url='+url+'&description='+title);
+        return false;
     });
 });
 

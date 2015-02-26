@@ -60,7 +60,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="#" class="tooltip">
+					<a href="#" class="tooltip" onclick="doCallModuleAction('document','procDocumentVoteUp','{$oDocument->document_srl}');return false;">
 						<i class="xe-heart"></i>
 						<span class="tooltip_wrap" style="margin-left: -21px; bottom: 100%; display: none;">
 							<span class="speech">Like it</span>
@@ -69,7 +69,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="#" class="tooltip">
+					<a href="{getUrl('act', 'dispDocumentPrint')}" target="_blank" class="tooltip">
 						<i class="xe-print-paper"></i>
 						<span class="tooltip_wrap" style="margin-left: -16px; bottom: 100%; display: none;">
 							<span class="speech">인쇄</span>
@@ -120,7 +120,7 @@
 				<a href="{getUrl('search_target','tag','search_keyword',$tag,'document_srl','')}" class="tag">{htmlspecialchars($tag)}</a>
 			</block>
 		</div>
-		<div class="sns">
+		<div class="sns" data-url="{$oDocument->getPermanentUrl()}" data-title="{$oDocument->getTitle()}">
 			<ul>
 				<li>
 					<a href="#" class="tooltip">
@@ -189,7 +189,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="#" class="tooltip">
+							<a href="#" class="tooltip" onclick="doCallModuleAction('document','procDocumentVoteUp','{$oDocument->document_srl}');return false;">
 								<i class="xe-heart"></i>
 								<span class="tooltip_wrap" style="margin-left: -21px; bottom: 100%; display: none;">
 									<span class="speech">Like it</span>
@@ -198,7 +198,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="#" class="tooltip">
+							<a href="{getUrl('act', 'dispDocumentPrint')}" target="_blank" class="tooltip">
 								<i class="xe-print-paper"></i>
 								<span class="tooltip_wrap" style="margin-left: -16px; bottom: 100%; display: none;">
 									<span class="speech">인쇄</span>
@@ -207,7 +207,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="#" class="tooltip">
+							<a href="#popup_menu_area" class="tooltip">
 								<i class="xe-ellipsis-h"></i>
 								<span class="tooltip_wrap" style="margin-left: -33px; bottom: 100%; display: none;">
 									<span class="speech">이 게시물을</span>
@@ -216,13 +216,13 @@
 							</a>
 						</li>
 						<li>
-							<a href="#" class="w_type">
+							<a href="{getUrl('act','dispBoardWrite','document_srl',$oDocument->document_srl,'comment_srl','')}" class="w_type">
 								<i class="xe-pen"></i>
 								<span class="btn_txt">수정</span>
 							</a>
 						</li>
 						<li>
-							<a href="#" class="w_type">
+							<a href="{getUrl('act','dispBoardDelete','document_srl',$oDocument->document_srl,'comment_srl','')}" class="w_type">
 								<i class="xe-close"></i>
 								<span class="btn_txt">삭제</span>
 							</a>
