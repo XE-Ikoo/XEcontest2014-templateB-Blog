@@ -23,7 +23,13 @@
 						     src="{getUrl()}/modules/board/skins/XEcontext2014Blog/img/thumb_user_64.png"|cond="!$comment->getProfileImage()">
 					</div>
 					<div class="cmt_con">
+					<!--@if($comment->member_srl)-->
 						<a href="#popup_menu_area" class="cmt_writer member_{$comment->member_srl}">{$comment->getNickname()}</a>
+					<!--@elseif($comment->homepage)-->
+						<a href="{$comment->homepage}" class="cmt_writer">{$comment->getNickname()}</a>
+					<!--@else-->
+						<span class="cmt_writer">{$comment->getNickname()}</span>
+					<!--@end-->
 						<span class="cmt_date">{getTimeGap($comment->get('regdate'), "Y.m.d H:i")}</span>
 						<div class="xe_content">
 							{$comment->getContent(false)}
