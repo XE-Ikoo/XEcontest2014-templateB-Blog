@@ -110,6 +110,20 @@ jQuery(function($) {
         window.location.href = url + '?mid=' + mid + '&page=' + pageNum;
         return false;
     });
+
+    // 문서 툴팁
+    $('.tooltip .xe-magnifier-expand').parent().click(function(){
+        var content = $('.xe_content');
+        var fontSize = parseInt(content.css('fontSize')) + 1;
+        content.css('font-size',''+fontSize+'px');
+        return false;
+    });
+    $('.tooltip .xe-magnifier-reduce').parent().click(function(){
+        var content = $('.xe_content');
+        var fontSize = parseInt(content.css('fontSize')) - 1;
+        content.css('font-size',''+fontSize+'px');
+        return false;
+    });
     
 });
 
