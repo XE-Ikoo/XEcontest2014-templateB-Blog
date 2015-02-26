@@ -9,6 +9,37 @@
 	<div class="cmt_lst_wrap" style="display:block">
 		<!-- COMMENT LIST -->
 		<ul class="cmt_lst">
+			<block loop="$oDocument->getComments()=>$comment">
+			<!--@if($comment->get('depth'))-->
+				<li class="cmt_item re_cmt cmt_depth{$comment->get('depth')>1?$comment->get('depth'):''}">
+			<!--@else-->
+				<li class="cmt_item">
+			<!--@end-->
+				<div class="cmt_item_con">
+					<div class="cmt_profile">
+						<span class="ico_recmt"></span>
+						<img class="cmt_profile_img" style="width:64px;height:64px"
+						     src="{$comment->getProfileImage()}"|cond="$comment->getProfileImage()"
+						     src="{getUrl()}/modules/board/skins/XEcontext2014Blog/img/thumb_user_64.png"|cond="!$comment->getProfileImage()">
+					</div>
+					<div class="cmt_con">
+						<a href="#popup_menu_area" class="cmt_writer member_{$comment->member_srl}">{$comment->getNickname()}</a>
+						<span class="cmt_date">{getTimeGap($comment->get('regdate'), "Y.m.d H:i")}</span>
+						<div class="xe_content">
+							{$comment->getContent(false)}
+						</div>
+					</div>
+					<div class="cmt_func_area">
+						<div class="cmt_func_more">
+							<a href="#popup_menu_area"><i class="xe-ellipsis-h"></i><span class="cmt_txt comment_{$comment->comment_srl}">이 게시물을</span></a>
+						</div>
+						<a href="{getUrl('act','dispBoardModifyComment','comment_srl',$comment->comment_srl)}"><i class="xe-pen"></i><span class="cmt_txt">수정</span></a>
+						<a href="{getUrl('act','dispBoardDeleteComment','comment_srl',$comment->comment_srl)}"><i class="xe-close"></i><span class="cmt_txt">삭제</span></a>
+						<a href="#"><i class="xe-comment-bubble"></i><span class="cmt_txt">댓글</span></a>
+					</div>
+				</div>
+				</li>
+			</block>
 			<li class="cmt_item">
 				<div class="cmt_item_con">
 					<div class="cmt_profile">
