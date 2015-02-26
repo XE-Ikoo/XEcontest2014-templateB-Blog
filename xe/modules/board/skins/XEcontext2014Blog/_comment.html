@@ -40,32 +40,6 @@
 				</div>
 				</li>
 			</block>
-			<li class="cmt_item">
-				<div class="cmt_item_con">
-					<div class="cmt_profile">
-						<span class="ico_recmt"></span>
-						<img src="../board/img/thumb_user_64.png" alt="" class="cmt_profile_img" style="width:64px;height:64px">
-					</div>
-					<div class="cmt_con">
-						<a href="#" class="cmt_writer">marob(로그인)</a>
-						<span class="cmt_date">1년 전</span>
-						<div class="xe_content">
-							댓글 테스트 입니다... 댓글의 댓글을 달 수 있습니다.
-						</div>
-					</div>
-					<div class="cmt_func_area">
-						<div class="cmt_func_more">
-							<a href="#"><i class="xe-ellipsis-h"></i><span class="cmt_txt">이 게시물을</span></a>
-						</div>
-						<a href="#"><i class="xe-pen"></i><span class="cmt_txt">수정</span></a>
-						<a href="#"><i class="xe-close"></i><span class="cmt_txt">삭제</span></a>
-						<a href="#"><i class="xe-comment-bubble"></i><span class="cmt_txt">댓글</span></a>
-					</div>
-				</div>
-			</li>
-			<!-- [D] 댓글에 댓글 적용 시 class="re_cmt" 추가,
-					 depth 에 따라 class="cmt_depth" ~ "cmt_depth2" 숫자 추가 적용
-			-->
 			<li class="cmt_item re_cmt cmt_depth">
 				<div class="cmt_item_con">
 					<div class="cmt_profile">
@@ -183,42 +157,45 @@
 		<!-- /COMMENT LIST -->
 		<!-- 댓글 쓰기 -->
 		<div class="write_comment cmt_write_form">
-			<form action="" method="post">
+			<form id="comment_form_{$oDocument->document_srl}" action="./" onsubmit="return procFilter(this, insert_comment)" method="post">
+				<input type="hidden" name="document_srl" value="{$oDocument->document_srl}">
 				<!-- [D] 비로그인 일 경우 노출 -->
-				<div class="write_author" style="display:block">
+				<div cond="!$is_logged" class="write_author" style="display:block">
 					<div class="cmt_user_form essen_check">
 						<label for="author" title="글쓴이(필수)"><i class="xe-user"></i><span class="blind">글쓴이(필수)</span></label>
-						<input type="text" name="author" class="text-input" id="author" placeholder="글쓴이(필수)">
+						<input type="text" name="nick_name" class="text-input" id="author" placeholder="글쓴이(필수)">
 					</div>
 					<div class="cmt_user_form essen_check">
 						<label for="password" title="비밀번호(필수)"><i class="xe-lock"></i><span class="blind">비밀번호(필수)</span></label>
-						<input type="password" name="email" class="text-input" id="password" placeholder="비밀번호(필수)">
+						<input type="password" name="password" class="text-input" id="password" placeholder="비밀번호(필수)">
 					</div>
 					<div class="cmt_user_form">
 						<label for="email" title="이메일 주소"><i class="xe-email"></i><span class="blind">이메일 주소</span></label>
-						<input type="text" name="url" class="text-input" id="email" placeholder="이메일 주소">
+						<input type="text" name="email" class="text-input" id="email" placeholder="이메일 주소">
 					</div>
 					<div class="cmt_user_form">
 						<label for="url" title="홈페이지"><i class="xe-link-l"></i><span class="blind">홈페이지</span></label>
-						<input type="text" name="url" class="text-input" id="url" placeholder="홈페이지">
+						<input type="text" name="homepage" class="text-input" id="url" placeholder="홈페이지">
 					</div>
 				</div>
 				<div class="cmt_editor">
 					<div class="cmt_profile">
 						<span class="ico_recmt"></span>
 						<!-- [D] 댓글에 노출될 프로필 이미지 적용 및 노출 사이즈 적용 -->
-						<img src="../board/img/thumb_user_64.png" alt="" class="cmt_profile_img" style="width:64px;height:64px">
+						<img alt="profile" class="cmt_profile_img" style="width:64px;height:64px"
+						     src="./img/thumb_user_64.png"|cond="!$is_logged"
+						     src="{$logged_info->profile_image->file}"|cond="$is_logged">
 					</div>
 					<div class="cmt_textarea_wrap">
-						<textarea rows="8" cols="42" class="cmt_textarea" placeholder="Comment...">댓글 테스트 글입니다. 비밀글로 등록하면 게시글 등록자와 관리자만 글을 확인할 수 있습니다.</textarea>
+						<textarea rows="8" cols="42" name="content" class="cmt_textarea" placeholder="Comment..."></textarea>
 					</div>
 					<div class="cmt_submit">
 						<!-- [D] 비밀글 쓰기 설정 시 노출 -->
 						<div class="secret_box" style="display:block">
-							<input type="checkbox" id="cmt_write_secret" name="" value="">
+							<input type="checkbox" id="cmt_write_secret" name="is_secret" value="Y">
 							<label for="cmt_write_secret">비밀글 쓰기</label>
 						</div>
-						<a href="#" class="btn_cmt_submit"><i class="xe-check"></i><span class="cmt_txt"> 댓글등록</span></a>
+						<a href="#" class="btn_cmt_submit" onclick="return procFilter(xGetElementById('comment_form_{$oDocument->document_srl}'), insert_comment)"><i class="xe-check"></i><span class="cmt_txt"> 댓글등록</span></a>
 					</div>
 				</div>
 			</form>
