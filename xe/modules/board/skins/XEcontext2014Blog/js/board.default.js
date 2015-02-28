@@ -179,4 +179,10 @@ jQuery(function($) {
     });
 });
 
+function reComment(comment_srl){
+    jQuery('div[id^=recomment]').hide();
+    jQuery('#recomment_'+comment_srl).show();
+    return false;
+}
+
 
