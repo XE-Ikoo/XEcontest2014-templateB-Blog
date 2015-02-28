@@ -32,7 +32,20 @@
 					<!--@end-->
 						<span class="cmt_date">{getTimeGap($comment->get('regdate'), "Y.m.d H:i")}</span>
 						<div class="xe_content">
-							{$comment->getContent(false)}
+							<block cond="$comment->isAccessible()">{$comment->getContent(false)}</block>
+							<form cond="!$comment->isAccessible()" id="comment_unlock_{$comment_srl}" action="./" method="get" onsubmit="return procFilter(this, input_password)" class="locked_comment">
+								<input type="hidden" name="mid" value="{$mid}" />
+								<input type="hidden" name="page" value="{$page}" />
+								<input type="hidden" name="document_srl" value="{$comment->get('document_srl')}" />
+								<input type="hidden" name="comment_srl" value="{$comment->get('comment_srl')}" />
+								<div>
+									<label for="password">
+										<i class="xe-key"></i>
+									</label>
+									<input type="password" name="password" class="" />
+									<a href="#" onclick="return procFilter(xGetElementById('comment_unlock_{$comment_srl}'), input_password)"><i class="xe-lock"></i></a>
+								</div>
+							</form>
 						</div>
 					</div>
 					<div class="cmt_func_area">

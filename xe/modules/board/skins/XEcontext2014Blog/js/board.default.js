@@ -177,6 +177,18 @@ jQuery(function($) {
         $('.comment .lst_toggle').show();
         return false;
     });
+
+    // 비밀글 비밀번호 입력 영역
+    $('.cmt_item .xe_content .locked_comment input').focus(function(){
+        $(this).parent().find('i').addClass('input_focused');
+        $(this).parent().find('a').addClass('input_focused');
+        $(this).parent().find('.xe-lock').toggleClass('xe-lock xe-unlock');
+    });
+    $('.cmt_item .xe_content .locked_comment input').focusout(function(){
+        $(this).parent().find('i').removeClass('input_focused');
+        $(this).parent().find('a').removeClass('input_focused');
+        $(this).parent().find('.xe-unlock').toggleClass('xe-unlock xe-lock');
+    });
 });
 
 function reComment(comment_srl){

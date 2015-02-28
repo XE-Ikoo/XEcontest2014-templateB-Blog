@@ -394,6 +394,14 @@
 .cmt_item.cmt_depth28{padding-left:446px}
 .cmt_item.cmt_depth29{padding-left:462px}
 .cmt_item.cmt_depth30{padding-left:478px}
+.cmt_item .xe_content .locked_comment input{transition: all 0.2s ease-in-out;-webkit-transition: all 0.2s ease-in-out;background-color: #fff;border: 1px solid #e0e0e0;font-size: 13px;padding: 7px 5px 8px 38px;width: 155px;}
+.cmt_item .xe_content .locked_comment input:focus{border-color:#f9cd1c;outline:none}
+.cmt_item .xe_content .locked_comment div{position: relative;display: inline-block;width: 140px;height: 32px;}
+.cmt_item .xe_content .locked_comment label{position: absolute;top: 1px;left: 1px;width: 30px;height: 30px;}
+.cmt_item .xe_content .locked_comment a{position: absolute;top: 0px;left: 200px;width: 30px;height: 30px;border: 1px solid #e0e0e0;border-left: none;}
+.cmt_item .xe_content .locked_comment a.input_focused{border-color: #f9cd1c;background-color:#f9cd1c;color:#fff}
+.cmt_item .xe_content .locked_comment i{display: block;width: 100%;height: 100%;border-right: 1px solid #e0e0e0;font-size: 20px;line-height: 30px;background-color: #fff;text-align: center;color: #bcbcbc;transition: all 0.2s ease-in-out;-webkit-transition: all 0.2s ease-in-out;}
+.cmt_item .xe_content .locked_comment i.input_focused{border-color:#f9cd1c;background-color:#f9cd1c;color:#fff}
 
 .cmt_item .cmt_write_form{margin-top:16px}
 .cmt_write_form{position:relative;clear:both;padding-top:16px;border-top:1px solid #e0e0e0}
